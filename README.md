@@ -1,0 +1,1 @@
+In this project I will be implementing a rock paper scissors game, taking input from the user and playing against the computer, thanks to some random generated options.
