@@ -31,6 +31,10 @@ const scissors = btnScissors.addEventListener('click', function (e)
 
 function playRound(playerSelection, computerSelection)
 {
+    if (playerScore.textContent == 5 && aiScore.textContent == 5 
+        || playerScore.textContent == 5 || aiScore.textContent == 5 ) {
+        return;
+    }
     if (playerSelection === computerSelection)
     { 
         playerScore.textContent = parseInt(playerScore.textContent) + 1;
@@ -60,19 +64,19 @@ function playRound(playerSelection, computerSelection)
     
     if (parseInt(playerScore.textContent) == 5 && parseInt(aiScore.textContent) == 5)
     {   
-        alert('Its a tie!');
-        reset ();
+        aiChoice.textContent = ("Looks like a tie!");
+        setTimeout(reset, 2000);
     }
 
     else if (parseInt(playerScore.textContent) == 5)
     {   
-        alert('You win, congratz!');
-        reset ();
+        aiChoice.textContent = ("You win this time, congratz!");
+        setTimeout(reset, 2000);
     }
     else if (parseInt(aiScore.textContent) == 5)
     {   
-        alert('The Ai win this time!');
-        reset ();
+        aiChoice.textContent = "The Ai Wins this time!";
+        setTimeout(reset, 2000);
     }
 }
 
